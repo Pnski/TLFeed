@@ -23,7 +23,7 @@ jobs:
 
       - name: Run script
         env:
-          DISCORD_WEBHOOK: ${{ secret.DISCORD_WEBHOOK }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: python check_notice.py
 
       - name: Save state
