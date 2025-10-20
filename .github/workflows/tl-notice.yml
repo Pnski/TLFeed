@@ -24,7 +24,7 @@ jobs:
       - name: Run script
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        run: python check_notice.py
+        run: python tlnotice.py
 
       - name: Save state
         if: always()
