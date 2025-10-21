@@ -2,7 +2,7 @@ name: TLFeed Bot
 
 on:
   schedule:
-    - cron: "*/10 * * * *"  # every 10 minutes
+    - cron: "0,30 * * * *"  # every half and full hour
   workflow_dispatch:
 
 permissions:
