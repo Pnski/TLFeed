@@ -5,7 +5,7 @@ import json
 file = "ids.json"
 Notification_API = "https://api-community.plaync.com/tl/board/notice_ko/noticeArticle"
 #Board_API = r"https://api-community.plaync.com/tl/board/notice_ko/article/search/moreArticle?isVote=true&moreSize=1&moreDirection=BEFORE&previousArticleId=0"
-WEBHOOKS = os.getenv("DISCORD_WEBHOOKS", "").split(",")
+WEBHOOKS = os.getenv("DISCORD_WEBHOOK", "").split(",")
 WEBHOOKS = [w.strip() for w in WEBHOOKS if w.strip()]
 
 # -------- Google Translate API --------
@@ -73,6 +73,7 @@ def postContent(title, description, id, color=0x2ECC71):
     for WEBHOOK in WEBHOOKS:
         r = requests.post(WEBHOOK, json=payload)
         if r.status_code != 204:
+            print("error in webhook")
             return False
     return True
 
